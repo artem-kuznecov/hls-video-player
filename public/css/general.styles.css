@@ -1,0 +1,84 @@
+@import url('slider.styles.css'); /* стили ползунка перемотки */
+@import url('smallscreen.styles.css'); /* стили для полноэкранного режима просмотра */
+@import url('fullscreen.styles.css'); /* стили для стандартного режима просмотра */
+@import url('mobile.styles.css'); /* минимальный адаптив (по ширине экрана менее 1250) */
+
+/* * Переопределение базовых стилей и общие классы */
+.hide {
+	display: none !important;
+}
+
+.h-px-5 {
+	height: 5px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #ff2400;
+	height: 100dvh;
+	display: flex;
+	overflow: hidden;
+}
+
+#buffer {
+	position: absolute;
+	top: 0;
+}
+
+/* * Анимирование лоадера */
+
+#loader {
+	width: 60%;
+	height: 70%;
+	box-shadow: 0 25px 65px -12px rgb(0 0 0);
+}
+
+#video-loader {
+	animation: loader-animation 3s infinite linear;
+}
+
+@keyframes loader-animation {
+	0% {
+		background: #a9a9a9;
+	}
+	50% {
+		background: #727272;
+	}
+	100% {
+		background: #a9a9a9;
+	}
+}
+
+/* * Корректировка отображения иконок */
+i {
+	cursor: pointer;
+	font-size: 2rem;
+}
+i.fa-pause {
+	font-size: 2.4rem;
+}
+i.fa-volume-xmark {
+	margin-right: 50px;
+}
+i:hover {
+	color: gray;
+}
+i:active {
+	transform: scale(0.8);
+}
+
+/* * Корректировка отображения ползунка в FireFox */
+@-moz-document url-prefix() {
+	#slider {
+		height: 5px;
+	}
+}
+
+#player-wrapper {
+	transition: all 0.3s;
+}

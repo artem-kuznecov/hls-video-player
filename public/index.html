@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		/>
+
+		<!-- HLS -->
+		<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+		<!-- Tailwind -->
+		<script src="https://cdn.tailwindcss.com"></script>
+
+		<!-- JQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+
+		<title>Video Player</title>
+	</head>
+	<body>
+		<!-- Лоадер загрузки -->
+		<div id="loader" class="flex m-auto py-2 px-2 bg-slate-300">
+			<div id="video-loader" class="h-5/6 w-full"></div>
+		</div>
+
+		<!-- Контейнер плеера -->
+		<div id="player-wrapper" class="smallscreen hide">
+			<video id="video" class="w-full smallscreen"></video>
+
+			<!-- Блок управления видео -->
+			<div
+				id="controls"
+				class="w-full flex flex-row justify-between smallscreen"
+			>
+				<!-- Ползунок перемотки -->
+				<div id="slider-area" class="absolute h-px-5"></div>
+				<input id="slider" type="range" max="600" min="0" value="0" />
+				<div id="buffer" class="bg-slate-300 h-px-5"></div>
+
+				<!-- Плей/пауза, кнокпи быстрой перемотки -->
+				<section id="play-pause" class="w-2/6 flex flex-row">
+					<i
+						id="remote-btn-left"
+						data-direction="backward"
+						class="fa-solid fa-backward m-auto"
+					></i>
+					<i id="play-pause-btn" class="fa-solid fa-play m-auto"></i>
+					<i
+						id="remote-btn-right"
+						data-direction="forward"
+						class="fa-solid fa-forward m-auto"
+					></i>
+				</section>
+
+				<!-- Текущее время воспроизведения -->
+				<span id="metrics" class="m-auto"></span>
+
+				<!-- Контроль громкости, кнопка полноэкранного режима -->
+				<section id="settings" class="w-2/6 flex flex-row justify-between">
+					<i id="mute-btn" class="fa-solid fa-volume-high m-auto"></i>
+					<input id="volume-btn" type="range" min="0" max="1" step="0.1" />
+					<i id="mode-toggle-btn" class="fa-solid fa-expand m-auto"></i>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>

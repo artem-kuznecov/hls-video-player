@@ -1,0 +1,37 @@
+/* * =============== Минимальный адаптив (по заданию требований нет) =============== */
+
+@media screen and (width < 1250px) {
+	#player-wrapper {
+		width: 100% !important;
+		height: 100% !important;
+		background-color: black !important;
+		margin: auto !important;
+		padding: 0 !important;
+	}
+
+	#video {
+		margin-top: 0 !important;
+	}
+
+	i {
+		color: #fff;
+		font-size: 150% !important;
+	}
+
+	#volume-btn {
+		accent-color: #fff !important;
+	}
+
+	#controls {
+		height: 50% !important;
+	}
+
+	#controls > * {
+		margin-top: 0px !important;
+	}
+
+	#controls > #metrics {
+		margin: auto !important;
+		color: white;
+	}
+}
